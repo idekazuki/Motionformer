@@ -331,7 +331,7 @@ def create_sampler(dataset, shuffle, cfg):
         if cfg.DATA.USE_REPEATED_AUG:
             sampler = samplers.RASampler(dataset)
         else:
-            sampler = DistributedSampler(dataset)
+            sampler = DistributedSampler(dataset, shuffle=shuffle)
     else:
         sampler = None
 
